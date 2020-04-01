@@ -58,8 +58,9 @@ public class DefaultSqlSession implements SqlSession {
         return (T) proxyInstance;
     }
 
-    private Object executeSql(String statementId, Type genericReturnType, Object[] args) throws Exception{
-        //将要去完成对simpleExecutor里的query方法的调用
+    @Override
+    public Object executeSql(String statementId, Type genericReturnType, Object[] args) throws Exception{
+        //完成对simpleExecutor里的query | update方法的调用
         simpleExecutor simpleExecutor = new simpleExecutor();
         MappedStatement mappedStatement = configuration.getMappedStatementMap().get(statementId);
 

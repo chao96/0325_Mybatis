@@ -1,5 +1,6 @@
 package com.lagou.sqlSession;
 
+import java.lang.reflect.Type;
 import java.util.List;
 
 public interface SqlSession {
@@ -14,4 +15,5 @@ public interface SqlSession {
     //为Dao接口生成代理实现类
     public <T> T getMapper(Class<?> mapperClass);
 
+    public Object executeSql(String statementId, Type genericReturnType, Object[] args) throws Exception;
 }

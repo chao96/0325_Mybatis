@@ -8,6 +8,7 @@ import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 public class XMLMapperBuilder {
@@ -26,8 +27,11 @@ public class XMLMapperBuilder {
         String namespace = rootElement.attributeValue("namespace");
 
         // 查出所有的节点（）
-        List<Element> list = rootElement.selectNodes("//*");
-        //List<Element> list = rootElement.selectNodes("//select");
+        List<Element> list = new ArrayList<>();
+        list.addAll(rootElement.selectNodes("//select"));
+        list.addAll(rootElement.selectNodes("//insert"));
+        list.addAll(rootElement.selectNodes("//update"));
+        list.addAll(rootElement.selectNodes("//delete"));
 
         for (Element element : list) {
             String SqlCommandType = element.getQName().getName();
