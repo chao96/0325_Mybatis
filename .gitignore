@@ -1,0 +1,3 @@
+# Project exclude paths
+/IPersistence/target/
+/IPersistence_test/target/
