@@ -78,7 +78,7 @@
 ```properties
 1.存储结构：基于 PerpetualCache 的 HashMap 本地缓存
 2.范围：	Mapper（Namespace）
-3.失效场景：同一个namespace中，如果有insert、update、delete操作，缓		  存将清空
+3.失效场景：同一个namespace中，如果有insert、update、delete操作，缓存将清空
 ```
 
 
